@@ -4,6 +4,7 @@ import Experience from "./experience";
 import Work from "./work";
 import Contact from "./contact";
 import Hero from "./hero";
+import Social from "./socials";
 
 function Content() {
     return (
@@ -13,6 +14,7 @@ function Content() {
             <Experience />
             <Work />
             <Contact />
+            <Social />
         </main>
     )
 }

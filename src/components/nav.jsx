@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gray-800 text-white p-2 fixed w-full top-0 left-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="mx-auto flex justify-between items-center px-2 lg:px-4">
         <div className="text-2xl font-bold">
           MY PORTFOLIO
         </div>
