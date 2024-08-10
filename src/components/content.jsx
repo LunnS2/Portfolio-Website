@@ -5,6 +5,7 @@ import Work from "./work";
 import Contact from "./contact";
 import Hero from "./hero";
 import Social from "./socials";
+import ThemeToggle from "./theme-toggle";
 
 function Content() {
     return (
@@ -15,6 +16,7 @@ function Content() {
             <Work />
             <Contact />
             <Social />
+            <ThemeToggle />
         </main>
     )
 }

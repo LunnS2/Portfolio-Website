@@ -2,10 +2,10 @@ import React from "react";
 
 function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center p-24 bg-black">
+    <section id="hero" className="min-h-screen flex items-center justify-center p-24 bg-white dark:bg-black">
       <div className="text-center">
-        <h2 className="text-3xl text-white font-bold mb-4">Hero Section</h2>
-        <p className="text-white text-lg">Content for the Hero section.</p>
+        <h2 className="text-3xl text-black dark:text-white font-bold mb-4">Hero Section</h2>
+        <p className="text-black dark:text-white text-lg">Content for the Hero section.</p>
       </div>
     </section>
   );
