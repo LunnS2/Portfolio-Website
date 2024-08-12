@@ -4,7 +4,7 @@ import Icon from './Icons';
 
 const Social = () => {
   return (
-    <div className="fixed bottom-0 right-0 p-4 px-2 lg:px-6">
+    <div className="fixed bottom-0 right-0 p-2 lg:p-4 px-2 lg:px-4">
       <ul className="flex flex-col items-center space-y-4">
         {socialMedia.map(({ url, name }, i) => (
           <li key={i}>
