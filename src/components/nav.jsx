@@ -14,7 +14,7 @@ const Navbar = () => {
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white focus:outline-none"
+          className="lg:hidden text-black dark:text-white focus:outline-none transition-colors duration-300"
         >
           {isOpen ? (
             <CloseIcon className="w-6 h-6" />

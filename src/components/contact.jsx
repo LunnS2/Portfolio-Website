@@ -51,7 +51,7 @@ function ContactForm() {
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center p-24 text-black bg-white dark:bg-black transition-colors duration-300">
       <div className="mx-auto p-4 bg-white shadow-md rounded-lg w-full lg:w-1/2">
-      <h2 className="text-2xl font-bold mb-4">Contact</h2>
+      <h2 className="text-2xl font-bold mb-4">Get in touch</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-black">Name</label>
