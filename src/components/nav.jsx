@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed w-full top-0 left-0 z-50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed w-full top-0 left-0 z-50 transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="mx-auto flex justify-between items-center px-2 lg:px-4">
         <div className="text-2xl font-bold">
