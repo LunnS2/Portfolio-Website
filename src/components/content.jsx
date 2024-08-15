@@ -8,17 +8,17 @@ import ThemeToggle from "./theme-toggle";
 import ContactForm from "./contact";
 
 function Content() {
-    return (
-        <main>
-            <Hero />
-            <About />
-            <Experience />
-            <Work />
-            <ContactForm />
-            <Social />
-            <ThemeToggle />
-        </main>
-    )
+  return (
+    <main>
+      <Hero />
+      <About />
+      <Experience />
+      <Work />
+      <ContactForm />
+      <Social />
+      <ThemeToggle />
+    </main>
+  )
 }
 
 export default Content;

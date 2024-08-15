@@ -6,7 +6,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'transform': 'transform',
+      },
+      transitionDuration: {
+        '300': '300ms', 
+      },
+    },
   },
   plugins: [],
 }

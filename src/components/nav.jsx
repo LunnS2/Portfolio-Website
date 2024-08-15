@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  let lastScrollTop = 0;
+
+  const handleScroll = () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScrollTop) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-gray-300 text-black dark:bg-gray-800 dark:text-white p-2 fixed w-full top-0 left-0 z-50 transition-colors duration-300">
+    <nav 
+      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed w-full top-0 left-0 z-50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
+    >
       <div className="mx-auto flex justify-between items-center px-2 lg:px-4">
         <div className="text-2xl font-bold">
           MY PORTFOLIO
