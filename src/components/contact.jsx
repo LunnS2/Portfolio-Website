@@ -49,43 +49,43 @@ function ContactForm() {
   };
   
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center p-24 text-black bg-white dark:bg-black transition-colors duration-300">
-      <div className="mx-auto p-4 bg-white shadow-md rounded-lg w-full lg:w-1/2">
-      <h2 className="text-2xl font-bold mb-4">Get in touch</h2>
+    <section id="contact" className="min-h-screen flex items-center justify-center p-24 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300">
+      <div className="mx-auto p-4 border border-gray-600 rounded-lg w-full lg:w-2/3">
+      <h2 className="text-3xl font-bold mb-8 text-center">Get in touch</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-black">Name</label>
+          <label htmlFor="name" className="block text-sm font-medium dark:text-white text-black transition-colors duration-300">Name</label>
           <input
             type="text"
             id="name"
             name="name"
             value={formState.name}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border dark:bg-black border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm transition-colors duration-300"
             required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-black">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium dark:text-white text-black transition-colors duration-300">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             value={formState.email}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border dark:bg-black border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm transition-colors duration-300"
             required
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="message" className="block text-sm font-medium text-black">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium dark:text-white text-black transition-colors duration-300">Message</label>
           <textarea
             id="message"
             name="message"
             value={formState.message}
             onChange={handleChange}
             rows="4"
-            className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border dark:bg-black border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-lime-500 focus:border-lime-500 sm:text-sm transition-colors duration-300"
             required
           />
         </div>
