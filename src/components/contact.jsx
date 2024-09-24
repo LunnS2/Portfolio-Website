@@ -92,7 +92,7 @@ function ContactForm() {
     >
       <div
         ref={formRef}
-        className={`mx-auto p-6 border border-gray-600 rounded-lg w-full lg:w-2/3 bg-white dark:bg-gray-800 shadow-lg ${animate ? "heartbeat" : ""}`}
+        className={`mx-auto p-6 border border-gray-600 rounded-lg w-full lg:w-2/3 bg-gray-100 dark:bg-gray-900 shadow-lg ${animate ? "heartbeat" : ""}`}
       >
         <h2 className="text-3xl font-bold mb-8 text-center">Get in touch</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -109,7 +109,7 @@ function ContactForm() {
               name="name"
               value={formState.name}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 sm:text-sm transition-transform duration-300"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-lime-500 sm:text-sm transition-transform duration-300"
               required
             />
           </div>
@@ -126,7 +126,7 @@ function ContactForm() {
               name="email"
               value={formState.email}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 sm:text-sm transition-transform duration-300"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-lime-500 sm:text-sm transition-transform duration-300"
               required
             />
           </div>
@@ -143,13 +143,13 @@ function ContactForm() {
               value={formState.message}
               onChange={handleChange}
               rows="4"
-              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500 sm:text-sm transition-transform duration-300"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-lime-500 sm:text-sm transition-transform duration-300"
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-gray-600 text-white font-semibold rounded-md shadow-lg hover:bg-gray-700 active:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 transition-transform duration-300"
+            className="w-full px-4 py-2 bg-gray-600 text-white font-semibold rounded-md shadow-lg hover:bg-gray-700 active:bg-gray-800 transition-transform duration-300"
           >
             Send
           </button>
