@@ -127,7 +127,7 @@ function Hero() {
       {/* Hero Content */}
       <div className="relative text-center z-10">
         <h2 className="text-3xl font-bold mb-8 text-black dark:text-white transition-colors duration-300">
-          Hero Section
+          Tiago Morna
         </h2>
         <p className="text-lg text-black dark:text-white transition-colors duration-300">
           Welcome to my web development portfolio.

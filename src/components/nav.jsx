@@ -26,13 +26,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav 
-      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed w-full top-0 left-0 z-50 transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
+    <nav
+      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      }`}
     >
-      <div className="mx-auto flex justify-between items-center px-2 lg:px-4">
-        <div className="text-2xl font-bold">
-          MY PORTFOLIO
-        </div>
+      <div className="mx-auto flex justify-between items-center px-4 lg:px-8">
+        {/* Hamburger Icon for Mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden text-black dark:text-white focus:outline-none transition-colors duration-300"
@@ -43,48 +43,56 @@ const Navbar = () => {
             <MenuIcon className="w-6 h-6" />
           )}
         </button>
-        <div className={`lg:flex lg:items-center lg:space-x-4 ${isOpen ? 'block' : 'hidden'} lg:block`}>
-          <Link 
-            to="hero" 
-            smooth={true} 
-            duration={500} 
+
+        {/* Centered Links for Large Screens */}
+        <div
+          className={`lg:flex lg:items-center lg:space-x-8 ${
+            isOpen ? 'block' : 'hidden'
+          } lg:block mx-auto`}
+        >
+          <Link
+            to="hero"
+            smooth={true}
+            duration={500}
             className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
           >
             Home
           </Link>
-          <Link 
-            to="about" 
-            smooth={true} 
-            duration={500} 
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
             className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
           >
             About
           </Link>
-          <Link 
-            to="experience" 
-            smooth={true} 
-            duration={500} 
+          <Link
+            to="experience"
+            smooth={true}
+            duration={500}
             className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
           >
             Experience
           </Link>
-          <Link 
-            to="work" 
-            smooth={true} 
-            duration={500} 
+          <Link
+            to="work"
+            smooth={true}
+            duration={500}
             className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
           >
             Work
           </Link>
-          <Link 
-            to="contact" 
-            smooth={true} 
-            duration={500} 
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
             className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
           >
             Contact
           </Link>
         </div>
+        {/* Placeholder for additional space */}
+        <div className="hidden lg:block w-6"></div>
       </div>
     </nav>
   );
