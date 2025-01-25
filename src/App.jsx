@@ -1,3 +1,5 @@
+// my-project\src\App.jsx
+
 import Navbar from "../src/components/nav";
 import Content from "./components/content";
 import Footer from "./components/footer";

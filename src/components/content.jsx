@@ -1,3 +1,5 @@
+// my-project\src\components\content.jsx
+
 import React from "react";
 import About from "./about";
 import Experience from "./experience";

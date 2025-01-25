@@ -92,7 +92,7 @@ function ContactForm() {
     >
       <div
         ref={formRef}
-        className={`mx-auto p-6 border border-gray-600 rounded-lg w-full lg:w-2/3 bg-gray-100 dark:bg-gray-900 shadow-lg ${animate ? "heartbeat" : ""}`}
+        className={`mx-auto p-6 border border-gray-600 rounded-lg w-full lg:w-2/3 bg-gray-100 dark:bg-neutral-950 shadow-lg ${animate ? "heartbeat" : ""}`}
       >
         <h2 className="text-3xl font-bold mb-8 text-center">Get in touch</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -109,7 +109,7 @@ function ContactForm() {
               name="name"
               value={formState.name}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-lime-500 sm:text-sm transition-transform duration-300"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-blue-300 sm:text-sm transition-transform duration-300"
               required
             />
           </div>
@@ -126,7 +126,7 @@ function ContactForm() {
               name="email"
               value={formState.email}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-lime-500 sm:text-sm transition-transform duration-300"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-blue-300 sm:text-sm transition-transform duration-300"
               required
             />
           </div>
@@ -143,7 +143,7 @@ function ContactForm() {
               value={formState.message}
               onChange={handleChange}
               rows="4"
-              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-lime-500 sm:text-sm transition-transform duration-300"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-gray-700 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-blue-300 sm:text-sm transition-transform duration-300"
               required
             />
           </div>
@@ -155,7 +155,7 @@ function ContactForm() {
           </button>
         </form>
         {formState.status && (
-          <p className="mt-4 text-sm text-green-600 dark:text-green-400 transition-opacity duration-500">{formState.status}</p>
+          <p className="mt-4 text-sm text-blue-300 transition-opacity duration-500">{formState.status}</p>
         )}
       </div>
     </section>
