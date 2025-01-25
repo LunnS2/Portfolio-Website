@@ -54,26 +54,30 @@ function ContactForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    const dataToSend = {
+      from_name: formState.name,
+      email_id: formState.email,
+      message: formState.message,
+    };
+
+    console.log("Data being sent:", dataToSend);
+
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
-        },
+        dataToSend,
         import.meta.env.VITE_EMAILJS_PUBLIC_API_KEY
       )
       .then(
         (response) => {
-          setFormState((prevState) => ({
-            ...prevState,
-            status: "Message sent successfully!",
+          console.log("Email sent successfully:", response);
+          setFormState({
             name: "",
             email: "",
             message: "",
-          }));
+            status: "Message sent successfully!",
+          });
         },
         (err) => {
           console.error("Failed to send message:", err);
@@ -155,7 +159,9 @@ function ContactForm() {
           </button>
         </form>
         {formState.status && (
-          <p className="mt-4 text-sm text-blue-300 transition-opacity duration-500">{formState.status}</p>
+          <p className="mt-4 text-sm text-blue-300 transition-opacity duration-500">
+            {formState.status}
+          </p>
         )}
       </div>
     </section>
@@ -163,5 +169,3 @@ function ContactForm() {
 }
 
 export default ContactForm;
-
-
