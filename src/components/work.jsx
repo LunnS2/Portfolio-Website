@@ -15,7 +15,7 @@ function Work() {
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-64 h-64 bg-white text-black border-4 border-slate-200 hover:bg-slate-200 flex items-center justify-center rounded-lg transition-transform duration-300 ease-in-out hover:-translate-y-2"
+          className="w-full sm:w-64 h-64 bg-white dark:bg-black text-black dark:text-white border border-gray-600 dark:hover:bg-neutral-900 hover:bg-gray-100 flex items-center justify-center rounded-md transition-transform duration-300 ease-in-out hover:-translate-y-2"
         >
           GitHub Project 1
         </a>
@@ -23,7 +23,7 @@ function Work() {
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-64 h-64 bg-white text-black border-4 border-slate-200 hover:bg-slate-200 flex items-center justify-center rounded-lg transition-transform duration-300 ease-in-out hover:-translate-y-2"
+          className="w-full sm:w-64 h-64 bg-white dark:bg-black text-black dark:text-white border border-gray-600 dark:hover:bg-neutral-900 hover:bg-gray-100 flex items-center justify-center rounded-md transition-transform duration-300 ease-in-out hover:-translate-y-2"
         >
           GitHub Project 2
         </a>
@@ -31,7 +31,7 @@ function Work() {
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-64 h-64 bg-white text-black border-4 border-slate-200 hover:bg-slate-200 flex items-center justify-center rounded-lg transition-transform duration-300 ease-in-out hover:-translate-y-2"
+          className="w-full sm:w-64 h-64 bg-white dark:bg-black text-black dark:text-white border border-gray-600 dark:hover:bg-neutral-900 hover:bg-gray-100 flex items-center justify-center rounded-md transition-transform duration-300 ease-in-out hover:-translate-y-2"
         >
           GitHub Project 3
         </a>

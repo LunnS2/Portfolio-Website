@@ -8,7 +8,7 @@ const Social = () => {
       <ul className="flex flex-col items-center space-y-4">
         {socialMedia.map(({ url, name }, i) => (
           <li key={i} className='transition-transform duration-300 ease-in-out hover:-translate-y-2'>
-            <a 
+            <a
               href={url} 
               aria-label={name} 
               target="_blank" 

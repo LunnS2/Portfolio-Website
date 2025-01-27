@@ -96,7 +96,7 @@ function ContactForm() {
     >
       <div
         ref={formRef}
-        className={`mx-auto p-6 border border-gray-600 rounded-lg w-full lg:w-2/3 shadow-lg ${animate ? "heartbeat" : ""}`}
+        className={`mx-auto p-6 rounded-md w-full lg:w-2/3 ${animate ? "heartbeat" : ""}`}
       >
         <h2 className="text-3xl font-bold mb-8 text-center">Get in touch</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -153,13 +153,13 @@ function ContactForm() {
           </div>
           <button
             type="submit"
-            className="w-full px-4 py-2 border border-gray-600 text-black dark:text-white font-semibold rounded-md shadow-lg dark:hover:bg-neutral-900 hover:bg-gray-100 active:bg-gray-800 transition-colors duration-300"
+            className="w-full px-4 py-2 border border-gray-600 text-black dark:text-white font-semibold rounded-md dark:hover:bg-neutral-900 hover:bg-gray-100 active:bg-gray-800 transition-colors duration-300"
           >
             Send
           </button>
         </form>
         {formState.status && (
-          <p className="mt-4 text-sm text-blue-300 transition-opacity duration-500">
+          <p className="mt-4 text-sm text-center text-black dark:text-white transition-all duration-300">
             {formState.status}
           </p>
         )}

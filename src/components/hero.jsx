@@ -136,7 +136,7 @@ function Hero() {
         <a
           href="/my_resume.pdf"
           download="Tiago_Morna_Resume.pdf"
-          className="mt-8 inline-block px-6 py-3 border border-black dark:border-white text-black dark:text-white bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-2"
+          className="mt-8 inline-block px-6 py-3 rounded-md border border-black dark:border-white text-black dark:text-white bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-2"
         >
           Download My Resume
         </a>
