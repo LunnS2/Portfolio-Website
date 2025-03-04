@@ -27,11 +27,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
+      className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed top-0 w-screen left-0 z-50 transition-all duration-300 overflow-hidden ${
         showNavbar ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="mx-auto flex justify-between items-center px-4 lg:px-8">
+      <div className="w-full max-w-screen flex justify-between items-center px-4 lg:px-8">
         {/* Hamburger Icon for Mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -91,6 +91,7 @@ const Navbar = () => {
             Contact
           </Link>
         </div>
+
         {/* Placeholder for additional space */}
         <div className="hidden lg:block w-6"></div>
       </div>

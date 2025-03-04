@@ -28,4 +28,7 @@
   animation: single-heartbeat 1.6s ease-out;
 }
 
-
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
