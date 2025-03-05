@@ -1,8 +1,7 @@
 export const socialMedia = [
-    { url: 'https://github.com', name: 'github' },
-    { url: 'https://twitter.com', name: 'twitter' },
+    { url: 'https://github.com/LunnS2', name: 'github' },
     { url: 'https://linkedin.com', name: 'linkedin' },
-    { url: 'https://instagram.com', name: 'instagram' },
+    { url: 'https://www.instagram.com/morninho_o/', name: 'instagram' },
   ];
   
 export const projects = [
