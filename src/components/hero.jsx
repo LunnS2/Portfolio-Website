@@ -1,128 +1,39 @@
 // my-project\src\components\hero.jsx
 
-import React, { useEffect, useRef } from "react";
-import * as THREE from "three";
+import React, { useState, useRef } from "react";
 
 function Hero() {
-  const canvasRef = useRef(null);
-  const sceneRef = useRef(null);
-  const linesRef = useRef([]);
-  const rendererRef = useRef(null);
+  const [mousePos, setMousePos] = useState({ x: "50%", y: "50%" });
+  const [isHovered, setIsHovered] = useState(false);
+  const heroRef = useRef(null);
 
-  useEffect(() => {
-    // Create Scene, Camera and Renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 15;
-
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    // Prevent duplicate canvases
-    if (canvasRef.current) {
-      canvasRef.current.innerHTML = "";
-      canvasRef.current.appendChild(renderer.domElement);
-    }
-
-    rendererRef.current = renderer;
-    sceneRef.current = scene;
-
-    // Function to get the current theme color
-    const getThemeColor = () => (document.documentElement.classList.contains("dark") ? 0xffffff : 0x000000);
-
-    // Create multiple dynamic lines on the sides
-    const createLines = () => {
-      const lines = [];
-      const material = new THREE.LineBasicMaterial({ color: getThemeColor() });
-
-      for (let i = 0; i < 2; i++) {
-        const points = [];
-        for (let j = 0; j < 10; j++) {
-          // Position lines on the sides, avoiding the center
-          const x = i % 2 === 0 ? -Math.random() * 10 - 5 : Math.random() * 10 + 5; // Left or right
-          const y = Math.random() * 6 - 3; // Vertical spread
-          const z = Math.random() * 6 - 3; // Depth
-          points.push(new THREE.Vector3(x, y, z));
-        }
-        const geometry = new THREE.BufferGeometry().setFromPoints(points);
-        const line = new THREE.Line(geometry, material);
-        lines.push(line);
-        scene.add(line);
-      }
-      linesRef.current = lines;
-    };
-
-    createLines();
-
-    // Track mouse position
-    const mouse = new THREE.Vector2(0, 0);
-    const handleMouseMove = (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-
-    // Animation Loop
-    let time = 0;
-    const animate = () => {
-      time += 0.01; // Time increment for sine wave animation
-      requestAnimationFrame(animate);
-
-      linesRef.current.forEach((line, index) => {
-        // Oscillate lines up and down using sine waves
-        line.position.y = Math.sin(time + index) * 1.5;
-
-        // Add subtle rotation
-        line.rotation.y += 0.0005;
-        line.rotation.z += 0.0005;
-
-        // React to mouse movement (subtle position shift)
-        line.position.x += (mouse.x * 0.05 - line.position.x) * 0.1;
-        line.position.z += (mouse.y * 0.05 - line.position.z) * 0.1;
-      });
-
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    // Handle window resizing
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener("resize", handleResize);
-
-    // Observe theme changes
-    const observer = new MutationObserver(() => {
-      const newColor = getThemeColor();
-      linesRef.current.forEach((line) => {
-        line.material.color.set(newColor);
-      });
-    });
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    // Cleanup on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      observer.disconnect();
-      linesRef.current.forEach((line) => {
-        line.geometry.dispose();
-        line.material.dispose();
-        scene.remove(line);
-      });
-      renderer.dispose();
-    };
-  }, []);
+  const handleMouseMove = (event) => {
+    if (!heroRef.current) return;
+    const { left, top, width, height } = heroRef.current.getBoundingClientRect();
+    const x = ((event.clientX - left) / width) * 100;
+    const y = ((event.clientY - top) / height) * 100;
+    setMousePos({ x: `${x}%`, y: `${y}%` });
+  };
 
   return (
     <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center p-24 bg-white dark:bg-black transition-colors duration-300"
+      ref={heroRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative min-h-screen flex items-center justify-center p-24 
+                 bg-white dark:bg-black transition-colors duration-500 overflow-hidden"
     >
-      {/* Three.js Canvas */}
-      <div ref={canvasRef} className="absolute inset-0"></div>
+      {/* Coding Image (Hidden by Default, Revealed on Hover) */}
+      <div
+        className="absolute inset-0 bg-[url('/code-bg-light.svg')] dark:bg-[url('/code-bg.svg')] bg-cover bg-center"
+        style={{
+          clipPath: isHovered
+            ? `circle(100px at ${mousePos.x} ${mousePos.y})`
+            : "circle(0px at 50% 50%)",
+          transition: "clip-path 0.2s ease-out",
+        }}
+      ></div>
 
       {/* Hero Content */}
       <div className="relative text-center z-10">
@@ -136,7 +47,9 @@ function Hero() {
         <a
           href="/my_resume.pdf"
           download="Tiago_Morna_Resume.pdf"
-          className="mt-8 inline-block px-6 py-3 rounded-md border border-black dark:border-white text-black dark:text-white bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-2"
+          className="mt-8 inline-block px-6 py-3 rounded-md border border-black dark:border-white 
+                     text-black dark:text-white bg-white dark:bg-black transition-all duration-300 
+                     ease-in-out hover:-translate-y-2"
         >
           Download My Resume
         </a>

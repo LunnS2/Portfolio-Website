@@ -1,6 +1,6 @@
 export const socialMedia = [
     { url: 'https://github.com/LunnS2', name: 'github' },
-    { url: 'https://linkedin.com', name: 'linkedin' },
+    { url: 'https://www.linkedin.com/in/tiago-morna', name: 'linkedin' },
     { url: 'https://www.instagram.com/morninho_o/', name: 'instagram' },
   ];
   
