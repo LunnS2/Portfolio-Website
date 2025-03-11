@@ -49,7 +49,7 @@ function Hero() {
           download="Tiago_Morna_Resume.pdf"
           className="mt-8 active:bg-gray-500 dark:active:bg-gray-500 inline-block px-6 py-3 rounded-md border border-black dark:border-white 
                      text-black dark:text-white bg-white dark:bg-black transition-all duration-300 
-                     ease-in-out hover:-translate-y-2"
+                     ease-in-out hover:-translate-y-2 active:transition-none"
         >
           Download My Resume
         </a>
