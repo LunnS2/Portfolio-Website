@@ -15,7 +15,7 @@ const Social = () => {
               rel="noreferrer" 
               className="p-2"
             >
-              <Icon name={name} className="w-6 h-6 text-gray-600 hover:text-gray-800" />
+              <Icon name={name} className="w-6 h-6 text-black dark:text-white dark:hover:text-gray-400 hover:text-gray-600" />
             </a>
           </li>
         ))}
