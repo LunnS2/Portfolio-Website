@@ -75,6 +75,14 @@ const Navbar = () => {
             Experience
           </Link>
           <Link
+            to="skills"
+            smooth={true}
+            duration={500}
+            className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
+          >
+            Skills
+          </Link>
+          <Link
             to="work"
             smooth={true}
             duration={500}

@@ -4,7 +4,7 @@ function Work() {
   return (
     <section
       id="work"
-      className="min-h-screen p-6 sm:p-12 md:p-24 flex flex-col items-center text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300"
+      className="min-h-screen p-6 sm:p-12 md:p-24 flex flex-col items-center text-black dark:text-white bg-white dark:bg-black transition-colors duration-300"
     >
       <h2 className="text-3xl font-bold mb-8 sm:text-3xl sm:mb-8">Work</h2>
       <p className="mb-8 sm:mb-12 text-center text-lg">

@@ -18,7 +18,7 @@ function Experience() {
       className="min-h-screen flex flex-col items-center justify-center p-24 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300"
     >
       <h2 className="text-3xl font-bold mb-8">Experience</h2>
-      
+
       {/* Year Selector */}
       <div className="mb-4">
         <label htmlFor="year-select" className="mr-2">
@@ -37,7 +37,7 @@ function Experience() {
           ))}
         </select>
       </div>
-      
+
       {/* GitHub Activity Graph */}
       <div className="mt-8">
         <GitHubCalendar
