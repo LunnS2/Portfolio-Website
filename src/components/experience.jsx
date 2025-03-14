@@ -1,16 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
 
 function Experience() {
+  // Dark mode state detection
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    setIsDark(htmlElement.classList.contains("dark"));
+
+    const observer = new MutationObserver(() => {
+      setIsDark(htmlElement.classList.contains("dark"));
+    });
+
+    observer.observe(htmlElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Year selection logic
   const startYear = 2024;
   const currentYearValue = new Date().getFullYear();
-
   const years = [];
   for (let year = startYear; year <= currentYearValue; year++) {
     years.push(year);
   }
 
   const [selectedYear, setSelectedYear] = useState(currentYearValue.toString());
+
+  const explicitTheme = {
+    light: ["#f0f0f0", "#c4edde", "#7ac7c4", "#f73859", "#384259"],
+    dark: ["#383838", "#4D455D", "#7DB9B6", "#F5E9CF", "#E96479"],
+  };
 
   return (
     <section
@@ -41,6 +65,9 @@ function Experience() {
       {/* GitHub Activity Graph */}
       <div className="mt-8">
         <GitHubCalendar
+          theme={explicitTheme}
+          colorScheme={isDark ? "dark" : "light"}
+          hideTotalCount={true}
           username="LunnS2"
           transformData={(data) =>
             data.filter(

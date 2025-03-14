@@ -62,7 +62,7 @@ function Skills() {
         {techStack.map((tech) => (
           <div
             key={tech.name}
-            className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-white"
+            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-lg dark:text-white text-black"
           >
             <img src={tech.src} alt={tech.name} className="w-6 h-6" />
             <span>{tech.name}</span>
