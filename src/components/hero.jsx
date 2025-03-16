@@ -9,7 +9,8 @@ function Hero() {
 
   const handleMouseMove = (event) => {
     if (!heroRef.current) return;
-    const { left, top, width, height } = heroRef.current.getBoundingClientRect();
+    const { left, top, width, height } =
+      heroRef.current.getBoundingClientRect();
     const x = ((event.clientX - left) / width) * 100;
     const y = ((event.clientY - top) / height) * 100;
     setMousePos({ x: `${x}%`, y: `${y}%` });
@@ -17,6 +18,7 @@ function Hero() {
 
   return (
     <section
+      id="hero"
       ref={heroRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
