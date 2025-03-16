@@ -6,7 +6,6 @@ import Experience from "./experience";
 import Work from "./work";
 import Hero from "./hero";
 import Social from "./socials";
-import ThemeToggle from "./theme-toggle";
 import ContactForm from "./contact";
 import Skills from "./skills";
 
@@ -20,7 +19,6 @@ function Content() {
       <Work />
       <ContactForm />
       <Social />
-      <ThemeToggle />
     </main>
   )
 }
