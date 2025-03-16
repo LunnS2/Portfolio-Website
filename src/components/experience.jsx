@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
+import { motion } from "framer-motion";
+import ScrollDown from "./scroll-down";
 
 function Experience() {
   // Dark mode state detection
@@ -39,42 +41,55 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-screen flex flex-col items-center justify-center p-24 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300"
+      className="min-h-screen flex flex-col items-center justify-center p-24 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
     >
-      <h2 className="text-3xl font-bold mb-8">Experience</h2>
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h2 className="text-3xl font-bold mb-8">Experience</h2>
 
-      {/* Year Selector */}
-      <div className="mb-4">
-        <label htmlFor="year-select" className="mr-2">
-          Select Year:
-        </label>
-        <select
-          id="year-select"
-          value={selectedYear}
-          onChange={(e) => setSelectedYear(e.target.value)}
-          className="p-2 border rounded text-black dark:text-white bg-white dark:bg-black"
-        >
-          {years.map((year) => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))}
-        </select>
-      </div>
+        {/* Year Selector */}
+        <div className="mb-4">
+          <label htmlFor="year-select" className="mr-2">
+            Select Year:
+          </label>
+          <select
+            id="year-select"
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(e.target.value)}
+            className="p-2 border rounded text-black dark:text-white bg-white dark:bg-black"
+          >
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      {/* GitHub Activity Graph */}
-      <div className="mt-8">
-        <GitHubCalendar
-          theme={explicitTheme}
-          colorScheme={isDark ? "dark" : "light"}
-          hideTotalCount={true}
-          username="LunnS2"
-          transformData={(data) =>
-            data.filter(
-              (day) => new Date(day.date).getFullYear() >= Number(selectedYear)
-            )
-          }
-        />
+        {/* GitHub Activity Graph */}
+        <div className="mt-8">
+          <GitHubCalendar
+            theme={explicitTheme}
+            colorScheme={isDark ? "dark" : "light"}
+            hideTotalCount={true}
+            username="LunnS2"
+            transformData={(data) =>
+              data.filter(
+                (day) =>
+                  new Date(day.date).getFullYear() >= Number(selectedYear)
+              )
+            }
+          />
+        </div>
+      </motion.div>
+      {/* Scroll Down Button */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <ScrollDown to="skills" />
       </div>
     </section>
   );

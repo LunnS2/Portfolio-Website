@@ -1,7 +1,8 @@
 import React from "react";
+import { motion } from "framer-motion";
+import ScrollDown from "./scroll-down";
 
 function Skills() {
-
   const techStack = [
     // Programming Languages / Markup
     { name: "TypeScript", src: "/tech-stack/typescript.svg" },
@@ -51,23 +52,35 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen p-6 sm:p-12 md:p-24 flex flex-col items-center text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300"
+      className="min-h-screen p-6 sm:p-12 md:p-24 flex flex-col items-center text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300 relative"
     >
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-8">Skills</h2>
-        <p className="text-lg">Content for the Skills section.</p>
-      </div>
-      {/* My Tech Stack */}
-      <div className="flex flex-wrap gap-4 p-6 justify-center">
-        {techStack.map((tech) => (
-          <div
-            key={tech.name}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-black bg-gray-200 dark:bg-gray-600 dark:text-white"
-          >
-            <img src={tech.src} alt={tech.name} className="w-6 h-6" />
-            <span>{tech.name}</span>
-          </div>
-        ))}
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+          <p className="text-lg">Content for the Skills section.</p>
+        </div>
+        {/* My Tech Stack */}
+        <div className="flex flex-wrap gap-4 p-6 justify-center">
+          {techStack.map((tech) => (
+            <div
+              key={tech.name}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-black bg-gray-200 dark:bg-gray-600 dark:text-white"
+            >
+              <img src={tech.src} alt={tech.name} className="w-6 h-6" />
+              <span>{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+      {/* Scroll Down Button */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <ScrollDown to="work" />
       </div>
     </section>
   );
