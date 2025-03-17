@@ -11,7 +11,7 @@ const ScrollDown = ({ to }) => {
         duration={500}
         className="cursor-pointer"
       >
-        <ArrowDownwardIcon className="text-black dark:text-white w-8 h-8 hover:text-gray-400 transition-colors duration-300" />
+        <ArrowDownwardIcon className="text-black dark:text-white w-8 h-8 hover:scale-125 transition-all duration-300" />
       </Link>
     </div>
   );
