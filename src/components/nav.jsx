@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { motion, useAnimation } from "framer-motion";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ThemeToggle from "./theme-toggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
+  const [showNavbar, setShowNavbar] = useState(false);
+  const controls = useAnimation();
+  const themeToggleControls = useAnimation();
   let lastScrollTop = 0;
 
   const handleScroll = () => {
@@ -20,17 +23,43 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    controls.start({ y: 0, opacity: 1 });
+  }, [controls]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      themeToggleControls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: "easeOut" },
+      });
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [themeToggleControls]);
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const handleThemeToggleClick = () => {
+    themeToggleControls.start({ rotate: 360, transition: { duration: 0.5 } });
+    setTimeout(() => {
+      themeToggleControls.start({ rotate: 0 });
+    }, 500);
+  };
+
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={controls}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`bg-white dark:bg-black text-black dark:text-white border-b-2 border-black dark:border-white p-2 fixed top-0 w-screen left-0 z-50 transition-all duration-300 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
-      } pr-4`} // Ensures proper right alignment
+      } pr-4`}
     >
       <div className="w-full max-w-screen flex justify-between items-center px-4 lg:px-8 relative">
         {/* Hamburger Icon for Mobile */}
@@ -97,12 +126,18 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Theme Toggle Positioned to the Right */}
-        <div className="absolute right-0 lg:p-2">
+        {/* Theme Toggle Animation */}
+        <motion.div
+          className="absolute right-0 lg:p-2"
+          initial={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          animate={themeToggleControls}
+          onClick={handleThemeToggleClick}
+        >
           <ThemeToggle />
-        </div>
+        </motion.div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

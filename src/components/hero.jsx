@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import ScrollDown from "./scroll-down";
 
 function Hero() {
@@ -7,20 +7,31 @@ function Hero() {
   const [isHovered, setIsHovered] = useState(false);
   const [isFadeInComplete, setIsFadeInComplete] = useState(false);
   const heroRef = useRef(null);
+  const scrollDownControls = useAnimation();
 
   const handleMouseMove = (event) => {
     if (!heroRef.current) return;
-    const { left, top, width, height } =
-      heroRef.current.getBoundingClientRect();
+    const { left, top, width, height } = heroRef.current.getBoundingClientRect();
     const x = ((event.clientX - left) / width) * 100;
     const y = ((event.clientY - top) / height) * 100;
     setMousePos({ x: `${x}%`, y: `${y}%` });
   };
 
-  // Handle fade-in completion
   const handleAnimationComplete = () => {
     setIsFadeInComplete(true);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      scrollDownControls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: "easeOut" },
+      });
+    }, 1500); 
+
+    return () => clearTimeout(timer);
+  }, [scrollDownControls]);
 
   return (
     <section
@@ -34,23 +45,23 @@ function Hero() {
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
         onAnimationComplete={handleAnimationComplete}
       >
-        {/* Coding Image (Hidden by Default, Revealed on Hover) */}
-        <div
-          className="absolute inset-0 bg-[url('/code-bg-light.svg')] dark:bg-[url('/code-bg.svg')] bg-cover bg-center"
-          style={{
+        {/* Coding Image Animated with Framer Motion */}
+        <motion.div
+          className="absolute inset-0 bg-[url('/bg-coding-white-full.jpg')] dark:bg-[url('/bg-coding-invert-full.jpg')] bg-cover bg-center"
+          initial={{ clipPath: "circle(0px at 50% 50%)" }}
+          animate={{
             clipPath: isFadeInComplete
               ? isHovered
-                ? `circle(100px at ${mousePos.x} ${mousePos.y})`
+                ? `circle(150px at ${mousePos.x} ${mousePos.y})`
                 : "circle(0px at 50% 50%)"
-              : "circle(0px at 50% 50%)",
-            transition: "clip-path 0.2s ease-out",
+              : "circle(0px at 50% 50%)"
           }}
-        ></div>
+          transition={{ duration: 0.2, ease: "easeOut" }}
+        />
 
         {/* Hero Content */}
         <div className="relative text-center z-10">
@@ -71,10 +82,15 @@ function Hero() {
         </div>
       </motion.div>
 
-      {/* Scroll Down Button */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      {/* Scroll Down Button with Animation */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        animate={scrollDownControls}
+      >
         <ScrollDown to="about" />
-      </div>
+      </motion.div>
     </section>
   );
 }
