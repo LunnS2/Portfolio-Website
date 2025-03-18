@@ -49,6 +49,22 @@ function Skills() {
     { name: "Blender", src: "/tech-stack/blender.svg" },
   ];
 
+  // Variants for stagger effect
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1, // Delay between each child's animation
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section
       id="skills"
@@ -66,17 +82,22 @@ function Skills() {
           <p className="text-lg">Content for the Skills section.</p>
         </div>
         {/* My Tech Stack */}
-        <div className="flex flex-wrap gap-4 p-6 justify-center">
-          {techStack.map((tech) => (
-            <div
-              key={tech.name}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-black bg-gray-200 dark:bg-gray-600 dark:text-white"
-            >
-              <img src={tech.src} alt={tech.name} className="w-6 h-6" />
-              <span>{tech.name}</span>
-            </div>
+        <motion.div
+          className="flex flex-wrap gap-4 p-6 justify-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {techStack.map((tech, index) => (
+            <motion.div key={tech.name} variants={itemVariants}>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg hover:rotate-3 text-black bg-gray-200 dark:bg-gray-600 dark:text-white transition-colors duration-300">
+                <img src={tech.src} alt={tech.name} className="w-6 h-6" />
+                <span>{tech.name}</span>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
       {/* Scroll Down Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">

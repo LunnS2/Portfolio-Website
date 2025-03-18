@@ -49,7 +49,7 @@ const Social = () => {
             >
               <Icon
                 name={name}
-                className="w-6 h-6 text-black dark:text-white dark:group-hover:text-gray-400 group-hover:text-gray-600"
+                className="w-6 h-6 text-black dark:text-white dark:group-hover:text-gray-400 group-hover:text-gray-600 transition-colors duration-300"
               />
             </a>
           </motion.li>
