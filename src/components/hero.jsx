@@ -11,7 +11,8 @@ function Hero() {
 
   const handleMouseMove = (event) => {
     if (!heroRef.current) return;
-    const { left, top, width, height } = heroRef.current.getBoundingClientRect();
+    const { left, top, width, height } =
+      heroRef.current.getBoundingClientRect();
     const x = ((event.clientX - left) / width) * 100;
     const y = ((event.clientY - top) / height) * 100;
     setMousePos({ x: `${x}%`, y: `${y}%` });
@@ -28,7 +29,7 @@ function Hero() {
         y: 0,
         transition: { duration: 0.8, ease: "easeOut" },
       });
-    }, 1500); 
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [scrollDownControls]);
@@ -58,7 +59,7 @@ function Hero() {
               ? isHovered
                 ? `circle(150px at ${mousePos.x} ${mousePos.y})`
                 : "circle(0px at 50% 50%)"
-              : "circle(0px at 50% 50%)"
+              : "circle(0px at 50% 50%)",
           }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         />
@@ -84,12 +85,14 @@ function Hero() {
 
       {/* Scroll Down Button with Animation */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-8 left-1/2"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         animate={scrollDownControls}
       >
-        <ScrollDown to="about" />
+        <div className="transform -translate-x-1/2 z-20">
+          <ScrollDown to="about" />
+        </div>
       </motion.div>
     </section>
   );
