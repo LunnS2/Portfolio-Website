@@ -158,7 +158,7 @@ function ContactForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-4 py-2 border border-gray-600 text-black dark:text-white font-semibold rounded-md dark:bg-neutral-950 dark:hover:bg-black hover:bg-white bg-gray-100 transition-colors duration-300 flex items-center justify-center"
+              className="w-full px-4 py-2 border border-gray-600 text-black dark:text-white font-semibold rounded-md dark:bg-neutral-950 dark:hover:bg-neutral-900 hover:bg-gray-200 bg-gray-100 transition-colors duration-300 flex items-center justify-center"
             >
               {loading ? (
                 <div className="flex items-center">
