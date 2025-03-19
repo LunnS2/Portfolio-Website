@@ -17,7 +17,7 @@ const Navbar = () => {
         y: 0,
         transition: { duration: 0.8, ease: "easeOut" },
       });
-    }, 1500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [themeToggleControls]);
 

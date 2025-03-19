@@ -1,11 +1,12 @@
 import React from 'react';
-import { GitHub, Twitter, LinkedIn, Instagram, FastfoodSharp } from '@mui/icons-material';
+import { GitHub, Twitter, LinkedIn, Instagram, FastfoodSharp, Email } from '@mui/icons-material';
 
 const iconMap = {
   github: <GitHub />,   
   twitter: <Twitter />,
   linkedin: <LinkedIn />,
   instagram: <Instagram />,
+  email: <Email />
 };
 
 const Icon = ({ name, className }) => {

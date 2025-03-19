@@ -23,7 +23,7 @@ const Social = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       controls.start("visible");
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [controls]);

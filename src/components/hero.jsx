@@ -29,7 +29,7 @@ function Hero() {
         y: 0,
         transition: { duration: 0.8, ease: "easeOut" },
       });
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [scrollDownControls]);
@@ -47,7 +47,7 @@ function Hero() {
         className="text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
         onAnimationComplete={handleAnimationComplete}
       >
         {/* Coding Image Animated with Framer Motion */}

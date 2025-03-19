@@ -55,7 +55,7 @@ function Skills() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Delay between each child's animation
+        staggerChildren: 0.05, // Delay between each child's animation
       },
     },
   };
