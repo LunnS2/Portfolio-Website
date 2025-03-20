@@ -44,6 +44,14 @@ function Work() {
           >
             GitHub Project 3
           </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-64 h-64 bg-white dark:bg-black text-black dark:text-white border border-gray-600 dark:hover:bg-neutral-900 hover:bg-gray-100 flex items-center justify-center rounded-md transition-transform duration-300 ease-in-out hover:-translate-y-2"
+          >
+            GitHub Project 4
+          </a>
         </div>
       </motion.div>
       {/* Scroll Down Button */}

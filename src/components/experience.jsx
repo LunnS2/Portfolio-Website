@@ -51,6 +51,40 @@ function Experience() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-3xl font-bold mb-8">Experience</h2>
+        <ul className="text-lg mb-8">
+          <li>
+            <a
+              href="https://appbrewery.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vocational Diploma in Multimedia Technology  
+              
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://appbrewery.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Full-Stack Web
+              Development Bootcamp</a>
+          </li>
+          <li>
+            <a
+              href="https://appbrewery.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Self-Directed Study in Full-Stack Development</a>
+          </li>
+          <li>
+            <a
+              href="https://appbrewery.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Python Bootcamp</a>
+          </li>
+        </ul>
 
         {/* Year Selector */}
         <div className="mb-4">
@@ -72,7 +106,7 @@ function Experience() {
         </div>
 
         {/* GitHub Activity Graph */}
-        <div className="mt-8">
+        <div className="mt-8 flex justify-center">
           <GitHubCalendar
             theme={explicitTheme}
             colorScheme={isDark ? "dark" : "light"}
