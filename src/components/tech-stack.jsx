@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import ScrollDown from "./scroll-down";
 
-function Skills() {
+function TechStack() {
   const techStack = [
     // Programming Languages / Markup
     { name: "TypeScript", src: "/tech-stack/typescript.svg" },
@@ -78,7 +78,7 @@ function Skills() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+          <h2 className="text-3xl font-bold mb-8">Tech Stack</h2>
           <p className="text-lg">Content for the Skills section.</p>
         </div>
         {/* My Tech Stack */}
@@ -107,4 +107,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default TechStack;

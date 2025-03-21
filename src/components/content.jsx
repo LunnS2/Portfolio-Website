@@ -2,20 +2,20 @@
 
 import React from "react";
 import About from "./about";
-import Experience from "./experience";
 import Work from "./work";
 import Hero from "./hero";
 import Social from "./socials";
 import ContactForm from "./contact";
-import Skills from "./skills";
+import TechStack from "./tech-stack";
+import Activity from "./activity";
 
 function Content() {
   return (
     <main>
       <Hero />
       <About />
-      <Experience />
-      <Skills />
+      <Activity />
+      <TechStack />
       <Work />
       <ContactForm />
       <Social />

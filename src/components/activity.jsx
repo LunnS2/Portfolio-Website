@@ -3,7 +3,7 @@ import GitHubCalendar from "react-github-calendar";
 import { motion } from "framer-motion";
 import ScrollDown from "./scroll-down";
 
-function Experience() {
+function Activity() {
   // Dark mode state detection
   const [isDark, setIsDark] = useState(false);
 
@@ -50,59 +50,27 @@ function Experience() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-3xl font-bold mb-8">Experience</h2>
-        <ul className="text-lg mb-8">
-          <li>
-            <a
-              href="https://appbrewery.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vocational Diploma in Multimedia Technology  
-              
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://appbrewery.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Full-Stack Web
-              Development Bootcamp</a>
-          </li>
-          <li>
-            <a
-              href="https://appbrewery.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Self-Directed Study in Full-Stack Development</a>
-          </li>
-          <li>
-            <a
-              href="https://appbrewery.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Python Bootcamp</a>
-          </li>
-        </ul>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-8">Activity</h2>
+          <p className="text-lg mb-8">During self-directed study, I started using GitHub and remained consistent.</p>
+        </div>
 
-        {/* Year Selector */}
-        <div className="mb-4">
-          <label htmlFor="year-select" className="mr-2">
-            Select Year:
-          </label>
-          <select
-            id="year-select"
-            value={selectedYear}
-            onChange={(e) => setSelectedYear(e.target.value)}
-            className="p-2 border rounded text-black dark:text-white bg-white dark:bg-black"
-          >
-            {years.map((year) => (
-              <option key={year} value={year}>
+        {/* Year Selector as Buttons */}
+        <div className="flex flex-wrap gap-4 p-6 justify-center">
+          {years.map((year) => (
+            <div key={year}>
+              <button
+                onClick={() => setSelectedYear(year.toString())}
+                className={`flex items-center justify-center w-24 h-12 rounded-lg text-lg font-medium transition-all duration-300 ${
+                  selectedYear === year.toString()
+                    ? "bg-gray-200 text-black dark:bg-neutral-700 dark:text-white"
+                    : "bg-gray-100 dark:bg-neutral-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-700"
+                }`}
+              >
                 {year}
-              </option>
-            ))}
-          </select>
+              </button>
+            </div>
+          ))}
         </div>
 
         {/* GitHub Activity Graph */}
@@ -121,6 +89,7 @@ function Experience() {
           />
         </div>
       </motion.div>
+
       {/* Scroll Down Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <ScrollDown to="skills" />
@@ -129,4 +98,4 @@ function Experience() {
   );
 }
 
-export default Experience;
+export default Activity;
