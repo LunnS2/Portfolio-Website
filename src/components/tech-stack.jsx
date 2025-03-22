@@ -79,7 +79,7 @@ function TechStack() {
       >
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-8">Tech Stack</h2>
-          <p className="text-lg">Content for the Skills section.</p>
+          {/*<p className="text-lg">Content for the Skills section.</p>*/}
         </div>
         {/* My Tech Stack */}
         <motion.div
