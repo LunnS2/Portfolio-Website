@@ -91,7 +91,7 @@ function TechStack() {
         >
           {techStack.map((tech, index) => (
             <motion.div key={tech.name} variants={itemVariants}>
-              <div className="flex items-center gap-2 px-4 py-1 rounded-lg hover:rotate-3 text-black bg-gray-200 dark:bg-neutral-800 dark:text-white transition-colors duration-300">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg hover:rotate-3 text-black bg-gray-200 dark:bg-neutral-800 dark:text-white transition-colors duration-300">
                 <img src={tech.src} alt={tech.name} className="w-6 h-6" />
                 <span>{tech.name}</span>
               </div>

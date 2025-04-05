@@ -34,8 +34,8 @@ function Activity() {
   const [selectedYear, setSelectedYear] = useState(currentYearValue.toString());
 
   const explicitTheme = {
-    light: ["#f0f0f0", "#c4edde", "#7ac7c4", "#f73859", "#384259"],
-    dark: ["#383838", "#4D455D", "#7DB9B6", "#F5E9CF", "#E96479"],
+    light: ["#FFFFFF", "#E0E0E0", "#B0B0B0", "#808080", "#505050"],
+    dark: ["#111111", "#333333", "#555555", "#777777", "#999999"],
   };
 
   return (
@@ -52,7 +52,10 @@ function Activity() {
       >
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-8">Activity</h2>
-          <p className="text-lg mb-8">During self-directed study, I started using GitHub and remained consistent.</p>
+          <p className="text-lg mb-8">
+            During self-directed study, I started using GitHub and remained
+            consistent.
+          </p>
         </div>
 
         {/* Year Selector as Buttons */}
@@ -61,7 +64,7 @@ function Activity() {
             <div key={year}>
               <button
                 onClick={() => setSelectedYear(year.toString())}
-                className={`flex items-center justify-center w-24 h-12 rounded-lg text-lg font-medium transition-all duration-300 ${
+                className={`flex items-center justify-center px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 ${
                   selectedYear === year.toString()
                     ? "bg-gray-200 text-black dark:bg-neutral-700 dark:text-white"
                     : "bg-gray-100 dark:bg-neutral-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-700"
@@ -76,14 +79,14 @@ function Activity() {
         {/* GitHub Activity Graph */}
         <div className="mt-8 flex justify-center">
           <GitHubCalendar
+            username="LunnS2"
+            hideTotalCount
             theme={explicitTheme}
             colorScheme={isDark ? "dark" : "light"}
-            hideTotalCount={true}
-            username="LunnS2"
             transformData={(data) =>
               data.filter(
                 (day) =>
-                  new Date(day.date).getFullYear() >= Number(selectedYear)
+                  new Date(day.date).getFullYear() === Number(selectedYear)
               )
             }
           />
