@@ -17,7 +17,7 @@ function Work() {
       >
         <h2 className="text-3xl font-bold mb-8 sm:text-3xl sm:mb-8">Work</h2>
         <p className="mb-8 sm:mb-12 text-center text-lg">
-          Content for the Work section.
+          Showcase of my key projects.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a
