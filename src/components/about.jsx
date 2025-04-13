@@ -25,14 +25,13 @@ function About() {
         </p>
         <br />
         <p className="text-lg">
-          My journey began with a Vocational Diploma in Multimedia Technology
-          and accelerated through a Full-Stack Web Development Bootcamp, where I
-          honed my skills in modern frameworks. Over the years, I've blended
-          academic rigor with self-directed learning, tackling projects ranging
-          from real-time chat applications to scalable social networks and
-          self-care platforms. Whether developing client websites or personal
-          projects, I prioritize clean code, intuitive design, and seamless user
-          experiences.
+          My journey began with a Vocational Diploma and accelerated through a
+          Full-Stack Web Development Bootcamp, where I honed my skills in modern
+          frameworks. Over the years, I've blended academic rigor with
+          self-directed learning, tackling projects ranging from real-time chat
+          applications to scalable social networks and self-care platforms.
+          Whether developing client websites or personal projects, I prioritize
+          clean code, intuitive design, and seamless user experiences.
         </p>
       </motion.div>
       {/* Scroll Down Button */}
