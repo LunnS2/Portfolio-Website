@@ -68,7 +68,7 @@ function TechStack() {
   return (
     <section
       id="skills"
-      className="min-h-screen p-6 sm:p-12 md:p-24 flex flex-col items-center text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300 relative"
+      className="min-h-screen p-6 pb-24 sm:p-12 md:p-24 flex items-center text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300 relative"
     >
       <motion.div
         className="text-center"
