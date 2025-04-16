@@ -41,7 +41,7 @@ function Hero() {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative min-h-screen flex items-center justify-center p-24 bg-white dark:bg-black transition-colors duration-300 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center p-12 bg-white dark:bg-black transition-colors duration-300 overflow-hidden"
     >
       <motion.div
         className="text-center"

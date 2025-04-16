@@ -41,7 +41,7 @@ function Activity() {
   return (
     <section
       id="experience"
-      className="min-h-screen flex flex-col items-center justify-center p-24 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
+      className="min-h-screen flex flex-col items-center justify-center p-12 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
     >
       <motion.div
         className="text-center"

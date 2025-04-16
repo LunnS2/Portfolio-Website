@@ -84,7 +84,7 @@ function ContactForm() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center p-6 lg:p-12 text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300"
+      className="min-h-screen flex items-center justify-center p-6 text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}

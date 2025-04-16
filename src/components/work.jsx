@@ -6,7 +6,7 @@ function Work() {
   return (
     <section
       id="work"
-      className="min-h-screen p-6 pb-24 sm:p-12 md:p-24 flex flex-col items-center text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
+      className="min-h-screen pb-24 p-12 flex flex-col items-center text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
     >
       <motion.div
         className="text-center"
