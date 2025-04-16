@@ -34,7 +34,7 @@ function Activity() {
   const [selectedYear, setSelectedYear] = useState(currentYearValue.toString());
 
   const explicitTheme = {
-    light: ["#FFFFFF", "#E0E0E0", "#B0B0B0", "#808080", "#505050"],
+    light: ["#F0F0F0", "#C0C0C0", "#A0A0A0", "#707070", "#303030"],
     dark: ["#222222", "#444444", "#666666", "#888888", "#B0B0B0"],
   };
 
