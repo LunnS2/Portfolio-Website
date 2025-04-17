@@ -5,20 +5,18 @@ import ScrollDown from "./scroll-down";
 
 function Activity() {
   const [isDark, setIsDark] = useState(false);
+  const [totalContributions, setTotalContributions] = useState(null);
 
   useEffect(() => {
     const htmlElement = document.documentElement;
     setIsDark(htmlElement.classList.contains("dark"));
-
     const observer = new MutationObserver(() => {
       setIsDark(htmlElement.classList.contains("dark"));
     });
-
     observer.observe(htmlElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
-
     return () => observer.disconnect();
   }, []);
 
@@ -28,13 +26,43 @@ function Activity() {
     { length: currentYearValue - startYear + 1 },
     (_, i) => startYear + i
   );
-
   const [selectedYear, setSelectedYear] = useState(currentYearValue.toString());
 
   const explicitTheme = {
     light: ["#F0F0F0", "#C0C0C0", "#A0A0A0", "#707070", "#303030"],
     dark: ["#222222", "#444444", "#666666", "#888888", "#B0B0B0"],
   };
+
+  useEffect(() => {
+    const fetchContributions = async () => {
+      try {
+        const res = await fetch(
+          `https://github-contributions-api.jogruber.de/v4/LunnS2?y=all`
+        );
+
+        if (!res.ok) throw new Error("Failed to fetch contributions");
+
+        const data = await res.json();
+
+        if (data?.total) {
+          // Calculate total by summing all yearly contributions
+          const total = Object.values(data.total).reduce(
+            (sum, yearTotal) => sum + yearTotal,
+            0
+          );
+          setTotalContributions(total);
+        } else {
+          console.error("Unexpected API structure:", data);
+          setTotalContributions(0);
+        }
+      } catch (error) {
+        console.error("Error fetching contributions:", error);
+        setTotalContributions(0);
+      }
+    };
+
+    fetchContributions();
+  }, []);
 
   return (
     <section
@@ -51,7 +79,12 @@ function Activity() {
         <h2 className="text-3xl font-bold mb-6">Activity</h2>
         <p className="text-lg mb-8">
           During self-directed study, I started using GitHub and remained
-          consistent.
+          consistent. Total contributions:{" "}
+          {totalContributions !== null ? (
+            <span className="font-semibold">{totalContributions}</span>
+          ) : (
+            <span className="animate-pulse">loading...</span>
+          )}
         </p>
 
         {/* Year Selector */}
@@ -72,11 +105,8 @@ function Activity() {
         </div>
 
         {/* GitHub Activity Graph */}
-        {/* GitHub Activity Graph */}
         <div className="w-full relative">
           <div className="overflow-x-auto pb-4">
-            {" "}
-            {/* Adds space below scrollbar */}
             <div className="mx-auto inline-block px-2">
               <GitHubCalendar
                 username="LunnS2"
