@@ -67,7 +67,7 @@ function TechStack() {
 
   return (
     <section
-      id="skills"
+      id="stack"
       className="min-h-screen pb-24 p-8 flex items-center text-black dark:text-white bg-gray-100 dark:bg-neutral-950 transition-colors duration-300 relative"
     >
       <motion.div
@@ -79,7 +79,7 @@ function TechStack() {
       >
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-8">Tech Stack</h2>
-          {/*<p className="text-lg">Content for the Skills section.</p>*/}
+          <p className="text-lg mb-8">Full-Stack tools and technologies I have experience with.</p>
         </div>
         {/* My Tech Stack */}
         <motion.div
@@ -91,8 +91,8 @@ function TechStack() {
         >
           {techStack.map((tech, index) => (
             <motion.div key={tech.name} variants={itemVariants}>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg hover:rotate-3 text-black bg-gray-200 dark:bg-neutral-800 dark:text-white transition-colors duration-300">
-                <img src={tech.src} alt={tech.name} className="w-6 h-6 filter grayscale" />
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg hover:rotate-3 text-black bg-gray-200 dark:bg-neutral-900 dark:text-white transition-colors duration-300">
+                <img src={tech.src} alt={tech.name} className="w-6 h-6 filter grayscale brightness-150" />
                 <span>{tech.name}</span>
               </div>
             </motion.div>

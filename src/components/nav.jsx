@@ -79,12 +79,12 @@ const Navbar = () => {
           </Link>
 
           <Link
-            to="skills"
+            to="stack"
             smooth={true}
             duration={500}
             className="cursor-pointer hover:text-gray-400 block lg:inline-block px-3 py-2 rounded-md"
           >
-            Skills
+            Stack
           </Link>
           <Link
             to="activity"
