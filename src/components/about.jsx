@@ -36,7 +36,7 @@ function About() {
       </motion.div>
       {/* Scroll Down Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <ScrollDown to="experience" />
+        <ScrollDown to="work" />
       </div>
     </section>
   );

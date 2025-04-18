@@ -66,7 +66,7 @@ function Activity() {
 
   return (
     <section
-      id="experience"
+      id="activity"
       className="min-h-screen flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
     >
       <motion.div
@@ -127,7 +127,7 @@ function Activity() {
 
       {/* Scroll Down Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <ScrollDown to="skills" />
+        <ScrollDown to="contact" />
       </div>
     </section>
   );

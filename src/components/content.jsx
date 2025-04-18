@@ -14,9 +14,9 @@ function Content() {
     <main>
       <Hero />
       <About />
-      <Activity />
-      <TechStack />
       <Work />
+      <TechStack />
+      <Activity />
       <ContactForm />
       <Social />
     </main>

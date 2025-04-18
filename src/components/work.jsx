@@ -6,7 +6,7 @@ function Work() {
   return (
     <section
       id="work"
-      className="min-h-screen pb-24 p-12 flex flex-col items-center text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
+      className="min-h-screen p-12 pb-24 flex flex-col items-center justify-center text-black dark:text-white bg-white dark:bg-black transition-colors duration-300 relative"
     >
       <motion.div
         className="text-center"
@@ -56,7 +56,7 @@ function Work() {
       </motion.div>
       {/* Scroll Down Button */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <ScrollDown to="contact" />
+        <ScrollDown to="skills" />
       </div>
     </section>
   );
