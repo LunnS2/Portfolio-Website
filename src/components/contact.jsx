@@ -114,7 +114,7 @@ function ContactForm() {
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border bg-gray-100 dark:bg-neutral-950 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-blue-300 sm:text-sm transition-colors duration-300"
+                className="mt-1 block w-full px-3 py-2 border bg-gray-100 dark:bg-neutral-950 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-neutral-400 sm:text-sm transition-colors duration-300"
                 required
               />
             </div>
@@ -132,7 +132,7 @@ function ContactForm() {
                 name="email"
                 value={formState.email}
                 onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border bg-gray-100 dark:bg-neutral-950 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-blue-300 sm:text-sm transition-colors duration-300"
+                className="mt-1 block w-full px-3 py-2 border bg-gray-100 dark:bg-neutral-950 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-neutral-400 sm:text-sm transition-colors duration-300"
                 required
               />
             </div>
@@ -150,7 +150,7 @@ function ContactForm() {
                 value={formState.message}
                 onChange={handleChange}
                 rows="4"
-                className="mt-1 block w-full px-3 py-2 border bg-gray-100 dark:bg-neutral-950 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-blue-300 sm:text-sm transition-colors duration-300"
+                className="mt-1 block w-full px-3 py-2 border bg-gray-100 dark:bg-neutral-950 border-gray-600 rounded-md shadow-sm focus:outline-none focus:border-neutral-400 sm:text-sm transition-colors duration-300"
                 required
               />
             </div>
