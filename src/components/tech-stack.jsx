@@ -8,13 +8,16 @@ function TechStack() {
     { name: "TypeScript", src: "/tech-stack/typescript.svg" },
     { name: "JavaScript", src: "/tech-stack/javascript.svg" },
     { name: "Python", src: "/tech-stack/python.svg" },
+    { name: "C#", src: "/tech-stack/csharp.svg" },
     { name: "SQL", src: "/tech-stack/sql.svg" },
     { name: "HTML", src: "/tech-stack/html.svg" },
     { name: "CSS", src: "/tech-stack/css.svg" },
 
     // Frameworks and Libraries
-    { name: "ReactJS", src: "/tech-stack/react.svg" },
     { name: "NextJS", src: "/tech-stack/nextjs.svg" },
+    { name: ".NET", src: "/tech-stack/dotnet-icon.svg" },
+    { name: "ReactJS", src: "/tech-stack/react.svg" },
+    { name: "Redux", src: "/tech-stack/redux-toolkit.svg" },
     { name: "NodeJS", src: "/tech-stack/nodejs.svg" },
     { name: "Express", src: "/tech-stack/express.svg" },
     { name: "jQuery", src: "/tech-stack/jquery.svg" },
@@ -79,7 +82,9 @@ function TechStack() {
       >
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-8">Tech Stack</h2>
-          <p className="text-lg mb-8">Full-Stack tools and technologies I have experience with.</p>
+          <p className="text-lg mb-8">
+            Full-Stack tools and technologies I have experience with.
+          </p>
         </div>
         {/* My Tech Stack */}
         <motion.div
@@ -92,7 +97,11 @@ function TechStack() {
           {techStack.map((tech, index) => (
             <motion.div key={tech.name} variants={itemVariants}>
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg hover:rotate-3 text-black bg-gray-200 dark:bg-neutral-900 dark:text-white transition-colors duration-300">
-                <img src={tech.src} alt={tech.name} className="w-6 h-6 filter grayscale brightness-150" />
+                <img
+                  src={tech.src}
+                  alt={tech.name}
+                  className="w-6 h-6 filter grayscale brightness-150"
+                />
                 <span>{tech.name}</span>
               </div>
             </motion.div>
