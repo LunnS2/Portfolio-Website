@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import ScrollDown from "./scroll-down";
 
@@ -29,7 +29,7 @@ function Hero() {
         y: 0,
         transition: { duration: 0.8, ease: "easeOut" },
       });
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [scrollDownControls]);

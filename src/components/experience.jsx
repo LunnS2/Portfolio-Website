@@ -1,5 +1,3 @@
-import React from "react";
-
 function Experience() {
   return (
     <section id="experience" className="min-h-screen flex items-center justify-center p-24 text-black dark:text-white bg-white dark:bg-black transition-colors duration-300">

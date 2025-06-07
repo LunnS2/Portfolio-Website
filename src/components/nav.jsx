@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion, useAnimation } from "framer-motion";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,7 +17,7 @@ const Navbar = () => {
         y: 0,
         transition: { duration: 0.8, ease: "easeOut" },
       });
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, [themeToggleControls]);
 

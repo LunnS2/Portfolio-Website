@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { motion } from "framer-motion";
 import ScrollDown from "./scroll-down";

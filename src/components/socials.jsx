@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { socialMedia } from '../config/index';
 import Icon from './Icons';
@@ -23,7 +23,7 @@ const Social = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       controls.start("visible");
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [controls]);

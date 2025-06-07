@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-scroll';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 

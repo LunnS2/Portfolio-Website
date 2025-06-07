@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
 
 function ThemeToggle() {

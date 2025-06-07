@@ -1,4 +1,3 @@
-import React from 'react';
 import { GitHub, Twitter, LinkedIn, Instagram, FastfoodSharp, Email } from '@mui/icons-material';
 
 const iconMap = {

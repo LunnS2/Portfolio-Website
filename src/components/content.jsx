@@ -1,6 +1,5 @@
 // my-project\src\components\content.jsx
 
-import React from "react";
 import About from "./about";
 import Work from "./work";
 import Hero from "./hero";
