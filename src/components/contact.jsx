@@ -124,7 +124,7 @@ function ContactForm() {
                 htmlFor="email"
                 className="block text-sm font-medium dark:text-white text-black transition-colors duration-300"
               >
-                Email
+                Your E-mail
               </label>
               <input
                 type="email"
