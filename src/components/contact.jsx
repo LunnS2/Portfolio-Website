@@ -106,7 +106,7 @@ function ContactForm() {
                 htmlFor="name"
                 className="block text-sm font-medium dark:text-white text-black transition-colors duration-300"
               >
-                Name
+                Your Name
               </label>
               <input
                 type="text"
@@ -142,7 +142,7 @@ function ContactForm() {
                 htmlFor="message"
                 className="block text-sm font-medium dark:text-white text-black transition-colors duration-300"
               >
-                Message
+                Your Message
               </label>
               <textarea
                 id="message"
