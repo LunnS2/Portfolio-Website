@@ -3,6 +3,8 @@ import ScrollDown from "./scroll-down";
 
 function TechStack() {
   const techStack = [
+    // AWS
+    { name: "AWS (developer associate)", src: "/tech-stack/aws.svg" },
     // Programming Languages / Markup
     { name: "TypeScript", src: "/tech-stack/typescript.svg" },
     { name: "JavaScript", src: "/tech-stack/javascript.svg" },
