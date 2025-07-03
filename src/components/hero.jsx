@@ -76,14 +76,14 @@ function Hero() {
           {/* Buttons container */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
             <a
-              href="/Tiago-Morna-CV-EN.pdf"
-              download="Tiago-Morna-CV.pdf"
+              href="/Tiago-Morna-CVEN.pdf"
+              download="Tiago-Morna-CV-EN.pdf"
               className="active:bg-gray-500 dark:active:bg-gray-500 inline-block px-6 py-3 rounded-md border border-black dark:border-white text-black dark:text-white bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-2 active:transition-none"
             >
               Download My Resume English
             </a>
             <a
-              href="/Tiago-Morna-CV-PT.pdf"
+              href="/Tiago-Morna-CVPT.pdf"
               download="Tiago-Morna-CV-PT.pdf"
               className="active:bg-gray-500 dark:active:bg-gray-500 inline-block px-6 py-3 rounded-md border border-black dark:border-white text-black dark:text-white bg-white dark:bg-black transition-all duration-300 ease-in-out hover:-translate-y-2 active:transition-none"
             >
