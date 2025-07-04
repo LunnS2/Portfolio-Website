@@ -30,7 +30,6 @@ function TechStack() {
     // Databases and Data Management
     { name: "MongoDB", src: "/tech-stack/mongodb.svg" },
     { name: "PostgreSQL", src: "/tech-stack/postgresql.svg" },
-    { name: "Mongoose", src: "/tech-stack/mongoose.svg" },
     { name: "JSON", src: "/tech-stack/json.svg" },
 
     // Developer Tools and Utilities
