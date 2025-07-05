@@ -1,10 +1,10 @@
-import { GitHub, Twitter, LinkedIn, Instagram, FastfoodSharp, Email } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email } from '@mui/icons-material';
+import { FaBehance } from 'react-icons/fa';
 
 const iconMap = {
   github: <GitHub />,   
-  twitter: <Twitter />,
   linkedin: <LinkedIn />,
-  instagram: <Instagram />,
+  behance: <FaBehance size={21}/>,
   email: <Email />
 };
 
