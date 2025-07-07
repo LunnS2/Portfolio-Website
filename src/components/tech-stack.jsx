@@ -9,6 +9,7 @@ function TechStack() {
     { name: "TypeScript", src: "/tech-stack/typescript.svg" },
     { name: "JavaScript", src: "/tech-stack/javascript.svg" },
     { name: "Python", src: "/tech-stack/python.svg" },
+    { name : "Java", src: "/tech-stack/java-icon.svg" },
     { name: "C#", src: "/tech-stack/csharp.svg" },
     { name: "SQL", src: "/tech-stack/sql.svg" },
     { name: "HTML", src: "/tech-stack/html.svg" },
